@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style_Log.css">
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="Log">
+      <h1 style="text-align: center; color:white; border: 2px solid black; border-radius: 500px; background-color: gray;">Логин на сайт</h1>
+      <div class="Log_in">
+        <form style="text-align: center; color:white; border: 2px solid #000; border-radius: 50px; background-color: gray;" id="main-form" onsubmit="return checkForm(this)" method="post">
+          <label for="name">Имя:</label>
+          <input type="text" name="name" placeholder="Имя" id="name"><br><br>
+          <label for="Password">Пороль:</label>
+          <input type="password" name="pass" aria-placeholder="Пароль" id="pass"><br><br>
+          <lader repass>Проверка пароля:</lader>
+          <input type="password" name="repass" placeholder="Проверка пароля" id="repass"><br><br>
+          <span>Пол:</span>
+          <input type="radio" name="state" id="male" value="Мужской">
+          <label for="male">Мужской</label>
+          <input type="radio" name="state" id="female" value="Женский">
+          <label for="female">Женский</label>
+          <div id="error" style="color: red;"></div>
+          <input type="submit" name="submit" value="Готово">
+        </form>
+      </div>
+    </div>
+      <script src="js/Login.js"></script>
+  </body>
+</html>
