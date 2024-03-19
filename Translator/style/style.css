@@ -1,0 +1,260 @@
+/* Стиль для перекладача */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 900px;
+    background: white;
+    box-shadow: 0 2px 20px black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.translator_property {
+    border: 1px solid #c7c7c783;
+}
+
+.translator_property .nuv_item {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    border-bottom: 1px solid #c7c7c7;
+    padding: 0 20px;
+}
+
+.translator_property .nuv_item li select {
+    outline: none;
+    border-style: none;
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: #606060;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+.translator_property .nuv_item li select:hover {
+    color: #111;
+}
+
+.bx-transfer {
+    font-size: 22px;
+    color: #606060;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+.bx-transfer:hover {
+    color: #111;
+}
+
+.write_box {
+    display: flex;
+}
+
+.Property_form, .Property_trans {
+    width: 100%;
+    position: relative;
+}
+
+.write_box textarea {
+    width: 100%;
+    height: 250px;
+    border-style: none;
+    outline: none;
+    resize: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #606060;
+    position: relative;
+}
+
+.write_box textarea:nth-child(1) {
+    border-right: 1px solid #c7c7c7;
+}
+
+.write_box .icons {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.icons .bx {
+    width: 35px;
+    height: 35px;
+    background: #ddd;
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+.icons .bx:hover {
+    background: #606060;
+    color: wheat;
+}
+
+.code_length {
+    font-size: 18px;
+    color: #606060;
+}
+
+/* Стилі для відео фону */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.main-button {
+    background-color: #ee1d1d;
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    font-family: 'Monotype Corsiva', sans-serif;
+}
+
+.main-button:hover {
+    background-color: #e93730;
+}
+
+/* Стиль для логотипу */
+.header {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Monotype Corsiva', sans-serif; 
+    font-size: 48px; 
+    font-weight: bold; 
+    color: #c42c2c; 
+}
+
+/* Стиль для Фона */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: rgb(255, 0, 0);
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    font-size: 30px; 
+    font-family: 'Monotype Corsiva', sans-serif; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+nav {
+    text-align: center;
+    position: absolute;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 150px;
+}
+
+/* Стиль для Аватара*/
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-details {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    display: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.user-details p {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.user-details #user-name {
+    font-weight: bold;
+}
+
+.user-details button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 20px;
+}
