@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  # Служба для бази даних PostgreSQL
+  db:
+    # Збираємо контейнер бази даних з Dockerfile.base
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    # Відкриваємо порт 5432 на зовнішньому і внутрішньому інтерфейсі
+    ports:
+      - "5432:5432"
+    # Завантажуємо змінні середовища з файлу .env
+    env_file:
+      - ./.env
+    # Мапуємо локальний каталог для збереження даних PostgreSQL
+    volumes:
+      - C:\Users\AdminX\Desktop\Translator\volumes:/var/lib/postgresql/data
+    # Встановлюємо змінні середовища для PostgreSQL
+    environment:
+      - POSTGRES_DB=Translator
+      - POSTGRES_USER=Users
+      - POSTGRES_PASSWORD=1111
+    # Відкриваємо порт 5432 для з'єднань з іншими контейнерами
+    expose:
+      - 5432
+
+  # Служба для веб-додатку
+  web:
+    # Збираємо контейнер веб-додатку з Dockerfile.web
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    # Відкриваємо порт 80 на зовнішньому і внутрішньому інтерфейсі
+    ports:
+      - "80:80"
+
+  # Служба для міграцій бази даних з використанням Flyway
+  migrations:
+    # Використовуємо образ Flyway
+    image: flyway/flyway
+    # Мапуємо каталог з міграціями SQL у контейнер Flyway
+    volumes:
+      - ./migrations/db:/flyway/sql
+    # Встановлюємо змінні середовища для підключення до бази даних
+    environment:
+      - FLYWAY_URL=jdbc:postgresql://db:5432/Translator
+      - FLYWAY_USER=Users
+      - FLYWAY_PASSWORD=1111
+    # Виконуємо міграції при старті контейнера
+    command: ["migrate"]
+    # Залежимо від контейнера з базою даних
+    depends_on:
+      - db

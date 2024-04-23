@@ -1,0 +1,5 @@
+# Використовуємо офіційний образ PostgreSQL
+FROM postgres:latest
+
+# Копіюємо міграційні SQL-файли у контейнер
+COPY *.sql /docker-entrypoint-initdb.d/
