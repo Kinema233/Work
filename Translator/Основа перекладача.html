@@ -1,0 +1,83 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test</title>
+        <link rel="stylesheet" href="style/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    </head>
+    <body>
+    <!-- Аватар -->
+    <div class="avatar-container">
+        <img src="Img/аватар.png" alt="Avatar" class="avatar">
+        <div class="user-details">
+            <p id="user-name">Ім'я користувача</p>
+            <p id="user-email">Електронна пошта</p>
+        </div>
+    </div>
+
+    <!-- Відео фон -->
+    <video autoplay muted loop id="video-background">
+        <source src="Img/video 1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Логотип -->
+    <div class="header">
+        <div class="logo">HELLO!</div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="Основа перекладача.html" class="main-button">Головна</a>
+            <a href="history.html" class="main-button">Історія перекладу</a>
+            <a href="about.html" class="main-button">Про нас</a>
+            <a href="registration.html" class="main-button">Реєстрація або вхід</a>
+        </nav>
+    </header>
+
+    <!-- Перекладач -->
+    <div class="container">
+        <div class="translator_property">
+            <ul class="nuv_item">
+                <li>
+                    <select>
+                        
+                    </select>
+                </li>
+                <li class="bx bx-transfer"></li>
+                <li>
+                    <select>
+                        
+                    </select>
+                </li>
+            </ul>
+            <div class="write_box">
+                <div class="Property_form">
+                    <textarea maxlength="5000" class="fromText" placeholder="Here"></textarea>
+                    <div class="icons">
+                            <span class="bx bx-volume-full from"></span> 
+                            <div class="code_length">0/5,000</div>
+                    </div>
+                </div>
+                <div class="Property_trans">
+                    <textarea class="toTranslate" disabled></textarea>
+                    <div class="icons">
+                        <span class="bx bx-volume-full to"></span>
+                        <span class="bx bx-copy"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фон -->
+    <div class="footer">
+        <p>Приємного користування!</p>
+    </div>
+
+    </body>
+    <script src="javascript/translation-history.js"></script>
+    <script src="javascript/user-details.js"></script>
+    <script src="javascript/language.js"></script>
+    <script src="javascript/main.js"></script>
+</html>
